@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Projects() {
+export default function About() {
 
   return (
     <div>
@@ -9,4 +9,3 @@ function Projects() {
   )
 }
 
-export default About
