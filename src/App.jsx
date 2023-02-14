@@ -1,37 +1,21 @@
 import { useState } from 'react'
-import { Link, Route, Routes } from "react-router-dom";
-import './App.css'
-
-import Resume from './components/pages/resume';
-import Contact from './components/pages/resume';
-import Projects from './components/pages/resume';
+import NavTabs from './components/Nav/NavTabs'
+import Resume from './components/pages/Resume';
+import Contact from './components/pages/Contact';
+import Home from './components/Home';
 
 
-  function App() {
-
-    return (
-      <div className="App">
-        <nav>
-          <Link to={'/resume'}>'Resume'</Link>
-          <Link to={'/contact'}>'Contact'</Link>
-          <Link to={'/projects'}>'Projects'</Link>
-        </nav>
-  
-        <Routes>
-          <Route
-            element={<Resume />}
-            path="/resume">
-          </Route>
-          <Route
-            element={<Contact />}
-            path="/contact">
-          </Route>
-          <Route
-            element={<Projects />}
-            path="/projects">
-          </Route>
-        </Routes>
-      </div>
-    )
+const renderPage = () => { 
+  if (currentPage === 'Home') {
+    return <Home />;
   }
-export default App
+  if (currentPage === 'Resume') {
+    return <Resume />;
+  }  
+  if (currentPage === 'Projects') {
+    return <Projects />;
+  }
+  if (currentPage === 'Contact') {
+    return <Contact />;
+  }
+};
